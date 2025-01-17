@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-import random
+if __name__ == "__main__":
+    import random
+
 number = random.randint(-10, 10)
 
 if number == 0:
