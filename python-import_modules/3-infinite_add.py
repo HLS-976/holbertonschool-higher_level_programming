@@ -9,9 +9,10 @@ res = 0
 if (length == 1):
     print("{}".format(res))
 
-for i in range(1, length):
+if (length > 1):
+    for i in range(1, length):
         if (int(argv[i])):
             res += int(argv[i])
 
-print("{}".format(res))
+    print("{}".format(res))
 
