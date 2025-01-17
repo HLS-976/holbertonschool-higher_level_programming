@@ -1,18 +1,8 @@
 #!/usr/bin/python3
+from sys import argv
 if __name__ == "__main__":
-    import sys
-
-argv = sys.argv
-length = len(argv)
-res = 0
-
-if (length == 1):
-    print("{}".format(res))
-
-if (length > 1):
-    for i in range(1, length):
-        if (int(argv[i])):
-            res += int(argv[i])
-
-    print("{}".format(res))
-
+    argc = len(argv) - 1
+    result = 0
+    for i in range(argc):
+        result += int(argv[i+1])
+    print(result)
