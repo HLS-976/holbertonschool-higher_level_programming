@@ -9,16 +9,16 @@ def roman_to_int(roman_string):
 
     if (roman_string is None or type(roman_string) is not str):
         return (0)
-    if ("IX" in roman_string):
-        roman_string = roman_string.replace("IX", "")
-        result += 9
-    if ("XC" in roman_string):
-        roman_string = roman_string.replace("XC", "")
-        result += 90
-    if ("CM" in roman_string):
-        roman_string = roman_string.replace("CM", "")
-        result += 900
-    if (roman_string):
+    else:
+        if ("IX" in roman_string):
+            roman_string = roman_string.replace("IX", "")
+            result += 9
+        if ("XC" in roman_string):
+            roman_string = roman_string.replace("XC", "")
+            result += 90
+        if ("CM" in roman_string):
+            roman_string = roman_string.replace("CM", "")
+            result += 900
         for i in roman_string:
             for j in convert_number:
                 if (j == i):
