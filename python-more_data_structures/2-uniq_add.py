@@ -3,9 +3,9 @@
 
 def uniq_add(my_list=[]):
     unique = []
-    sum = 0
+    res = 0
     for number in my_list:
         if number not in unique:
             unique.append(number)
-            sum += number
-    return sum
+            res += number
+    return res
