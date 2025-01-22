@@ -2,9 +2,8 @@
 
 
 def safe_print_list_integers(my_list=[], x=0):
-    count =  0
+    count = 0
     length = 0
-    index = 0
 
     for i in my_list:
         length += 1
