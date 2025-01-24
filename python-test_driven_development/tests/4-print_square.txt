@@ -17,7 +17,7 @@ ValueError: size must be >= 0
 
 
 Test with float and less than 0
->>> print_square(-3.5)
+>>> print_square(-6.5)
 Traceback (most recent call last):
     ...
 TypeError: size must an integer
@@ -29,11 +29,6 @@ Traceback (most recent call last):
     ...
 TypeError: print_square() missing 1 required positional argument: 'size'
 
-Test with float
->>> print_square(/)
-Traceback (most recent call last):
-    ...
-TypeError: TypeError: print_square() missing 1 required positional argument: 'size'
 
 Test with negatives integer
 >>> print_square("school")
