@@ -1,0 +1,40 @@
+This test is to the function print_square
+
+>>> print_square = __import__('4-print_square').print_square
+
+Test with integer
+>>> print_square(4)
+#####
+#####
+#####
+#####
+
+Test with negatives integer
+>>> print_square(-3)
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
+
+
+Test with float and less than 0
+>>> print_square(-3.5)
+Traceback (most recent call last):
+    ...
+TypeError: size must an integer
+
+
+Test with nothing
+>>> print_square()
+
+
+Test with float
+>>> print_square(-3)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+Test with negatives integer
+>>> print_square("school")
+Traceback (most recent call last):
+    ...
+TypeError: size must be an intger
