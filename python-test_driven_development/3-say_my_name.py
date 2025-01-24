@@ -9,10 +9,10 @@ def say_my_name(first_name, last_name=""):
     """
     say_my_name - Prints a sentence with first_name and last_name
 
-    first_name -- A string 
+    first_name -- A string
     las_name -- A string
 
-    This function checks if the two arguments are string and prints 
+    This function checks if the two arguments are string and prints
     a sentence else throws an error with the following message
     "first_name/last_name must be a string"
     """
