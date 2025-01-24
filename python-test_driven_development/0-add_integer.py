@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This module gives the access to add function
+this checks the input paramters and return the
+result of the addition.
+"""
 
 
 def add_integer(a, b=98):
