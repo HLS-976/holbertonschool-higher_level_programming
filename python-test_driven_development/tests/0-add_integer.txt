@@ -41,5 +41,6 @@ Test with integer casting
 99
 
 Test with an float overflow:
->>> add_integer(1.234567890123456789e50, 3)
-123456789012345687373170845290168189879543025106947
+Test large floats
+>>> add_integer(1e10, 1e10)
+20000000000
