@@ -2,36 +2,44 @@ Using add_integer
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
-Adding two numbers
+Test two numbers
 >>> add_integer(4, 7)
 11
 
-Adding with one number given
+Test with one number given
 >>> add_integer(20)
 118
 
-Adding with negative numbers
+Test with negative numbers
 >>> add_integer(-3, -5)
 -8
 
-Adding with positive and negative numbers
+Test with positive and negative numbers
 >>> add_integer(-5, 4)
 -1
 
-Adding with not a number
+Test with not a number
 >>> add_integer("salut", 6)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
-Adding with arguments that not are numbers
+Test with arguments that not are numbers
 >>> add_integer("2", "4")
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
-Adding with none arguments
+Test with none arguments
 >>> add_integer(None)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
+Test with integer casting
+>>> add_integer(int(1))
+99
+
+Test with an float overflow:
+>>> add_integer(1.234567890123456789e50, 3)
+123456789012345687373170845290168189879543025106947
