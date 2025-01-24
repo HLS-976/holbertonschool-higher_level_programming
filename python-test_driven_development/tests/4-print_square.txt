@@ -4,10 +4,10 @@ This test is to the function print_square
 
 Test with integer
 >>> print_square(4)
-#####
-#####
-#####
-#####
+####
+####
+####
+####
 
 Test with negatives integer
 >>> print_square(-3)
@@ -40,4 +40,3 @@ Test with negatives integer
 Traceback (most recent call last):
     ...
 TypeError: size must be an intger
-
