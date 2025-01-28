@@ -26,4 +26,4 @@ class Square:
             """
             This method returns the area square result
             """
-            return self.__size ** 2
+            return self.__size * self.__size
