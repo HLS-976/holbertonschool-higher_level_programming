@@ -11,12 +11,11 @@ class Square:
     
     size -- private instance attribute
     """
-    __size = None
 
+    
     def __init__(self, size):
         """
         self: Self@Square,
         size: Any
         """
         self.__size = size
-
