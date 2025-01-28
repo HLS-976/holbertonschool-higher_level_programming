@@ -1,21 +1,18 @@
 #!/usr/bin/python3
 """
 This module provides the square class
-that define a square
+This is an empty class
 """
 
 
 class Square:
     """
-    The Square is a class that defines a square
-    
-    size -- private instance attribute
+    The Square is an empty class
     """
+    __size = None
 
-    
     def __init__(self, size):
         """
-        self: Self@Square,
-        size: Any
+        Creates an instance of square with size attribute
         """
         self.__size = size
