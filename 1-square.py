@@ -8,11 +8,10 @@ that define a square
 class Square:
     """
     The Square is a class that defines a square
-    
+
     size -- private instance attribute
     """
     __size = None
-
 
     def __init__(self, size):
         """
