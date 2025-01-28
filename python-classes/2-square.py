@@ -9,6 +9,7 @@ class Square:
     """
     The Square is an empty class
     """
+    __size = None
 
     def __init__(self, size=0):
         """
