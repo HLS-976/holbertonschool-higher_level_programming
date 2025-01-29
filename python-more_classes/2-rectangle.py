@@ -9,6 +9,8 @@ class Rectangle:
     """
     This class is a representation of a rectangle
     """
+    __width = None
+    __height = None
 
     def __init__(self, width=0, height=0):
         self.width = width
