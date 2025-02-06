@@ -2,7 +2,7 @@
 """
 This module provides the abstract package
 """
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class Animal(ABC):
@@ -21,6 +21,7 @@ class Dog(Animal):
     """
     def sound(self):
         return "Bark"
+
 
 class Cat(Animal):
     """
