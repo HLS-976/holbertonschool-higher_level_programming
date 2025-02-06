@@ -3,6 +3,7 @@
 This module provides an abstract class for shapes.
 """
 from abc import ABC, abstractmethod
+from math import pi
 
 
 class Shape(ABC):
@@ -23,10 +24,10 @@ class Circle(Shape):
         self.radius = radius
 
     def area(self):
-        return 3.14 * self.radius ** 2
+        return pi * self.radius ** 2
 
     def perimeter(self):
-        return 2 * 3.14 * self.radius
+        return 2 * pi * self.radius
 
 
 class Rectangle(Shape):
