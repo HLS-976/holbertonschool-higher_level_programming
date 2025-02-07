@@ -1,20 +1,22 @@
 #!/usr/bin/python3
-"""This module provides classes"""
+""" Task 02: Verboselist """
 
 
 class VerboseList(list):
+    """ Verboselist class """
     def append(self, item):
+        print(f"Added [{item}] to the list.")
         super().append(item)
-        print("Added [{}] to the list.".format(item))
 
-    def extend(self, item):
-        super().extend(item)
-        print("Extended the list with [{}] items.".format(len(item)))
+    def extend(self, nb_item):
+        print(f"Extended the list with [{len(nb_item)}] items.")
+        super().extend(nb_item)
 
     def remove(self, item):
+        print(f"Removed [{item}] from the list.")
         super().remove(item)
-        print("Removed [{}] from the list.".format(item))
 
-    def pop(self, item=-1):
-        value = super().pop(item)
-        print("Popped [{}] from the list.".format(value))
+    def pop(self, index=-1):
+        item = self[index]
+        print(f"Popped [{item}] from the list.")
+        return (super().pop(index))
