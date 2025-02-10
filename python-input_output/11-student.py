@@ -22,12 +22,11 @@ class Student:
             if attr in self.__dict__:
                 resultat[attr] = self.__dict__[attr]
         return resultat
-    
+
     def reload_from_json(self, json):
         """
         This function reloads the attributes from json
         """
         for key in json:
-            if key in self.__dict__:
-                self[key] = json[key]
-
+            if json[key] == self.__dict__[key]:
+                self.__dict__[key] = json[key]
