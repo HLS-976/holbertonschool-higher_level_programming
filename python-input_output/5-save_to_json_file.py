@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module provides the function 
+This module provides the function
 """
 import json
 
