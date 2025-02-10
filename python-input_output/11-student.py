@@ -25,8 +25,7 @@ class Student:
 
     def reload_from_json(self, json):
         """
-        This function reloads the attributes from json
+        This function reloads attribute
         """
-        for key in json:
-            if json[key] == self.__dict__[key]:
-                self.__dict__[key] = json[key]
+        for key, value in json.items():
+            setattr(self, key, value)
