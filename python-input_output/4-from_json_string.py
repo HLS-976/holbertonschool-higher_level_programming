@@ -2,10 +2,11 @@
 """
 This module provides the function from_json_string
 """
+import json
 
 
 def from_json_string(my_str):
     """
     This function return a python object by string json
     """
-    return (my_str.__dict__)
+    return json.loads(my_str)
