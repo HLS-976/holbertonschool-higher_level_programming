@@ -39,7 +39,6 @@ class CustomObject:
         if not path.exists(filename):
             return None
 
-        des = None
         with open(filename, 'rb') as f:
             des = pickle.load(f)
-        return cls(des.name, des.age, des.is_student)
+            return des
