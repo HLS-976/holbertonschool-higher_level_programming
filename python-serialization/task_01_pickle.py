@@ -30,6 +30,9 @@ class CustomObject:
 
     @classmethod
     def deserialize(cls, filename):
+        """
+        This function deserialize and return an object
+        """
         if not path.exists(filename):
             return None
 
