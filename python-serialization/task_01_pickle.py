@@ -16,6 +16,9 @@ class CustomObject:
         self.is_student = is_student
 
     def display(self):
+        """
+        This function display the object with specific representation
+        """
         prt = "Name: {}\nAge: {}\nIs Student: {}"
         print(prt.format(self.name, self.age, self.is_student))
 
