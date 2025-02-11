@@ -30,7 +30,10 @@ class CustomObject:
 
     @classmethod
     def deserialize(cls, filename):
+        if not path.exists(filename):
+            return None
 
+        des = None
         with open(filename, 'rb') as f:
-            deserialized = pickle.load(f)
-            return deserialized
+            des = pickle.load(f)
+        return cls(des.name, des.age, des.is_student)
