@@ -36,9 +36,19 @@ class CustomObject:
         """
         This function deserialize and return an object
         """
-        if not path.exists(filename):
-            return None
+        try:
+            if not path.exists(filename):
+                raise FileNotFoundError("File not found")
 
-        with open(filename, 'rb') as f:
-            des = pickle.load(f)
-            return des
+            with open(filename, 'rb') as f:
+                des = pickle.load(f)
+                return des
+        except FileNotFoundError as e:
+            print(e)
+            return None
+        except EOFError:
+            print("End of file reached")
+            return None
+        except pickle.UnpicklingError:
+            print("Error unpickling the object")
+            return None
