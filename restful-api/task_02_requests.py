@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This module provides a thing"""
+"""
+This module provides a thing
+"""
 import requests
 import csv
 
@@ -24,8 +26,8 @@ def fetch_and_save_posts():
     """
     response = requests.get("https://jsonplaceholder.typicode.com/posts")
     status_code = response.status_code
-    list_of_data = []
     if status_code == 200:
+        list_of_data = []
         json_data = response.json()
         for element in json_data:
             list_of_data.append(
@@ -33,8 +35,8 @@ def fetch_and_save_posts():
                  'title': element['title'],
                  'body': element['body']
                  })
-    with open('posts.csv', 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=['id', 'title', 'body'])
-        writer.writeheader()
-        for elem in list_of_data:
-            writer.writerow(elem)
+        with open('posts.csv', 'w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=['id', 'title', 'body'])
+            writer.writeheader()
+            for elem in list_of_data:
+                writer.writerow(elem)
