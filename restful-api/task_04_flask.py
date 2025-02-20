@@ -19,21 +19,33 @@ users = {
 
 @app.route('/')
 def home():
+    """
+    This function print home message
+    """
     return "Welcome to the Flask API!"
 
 
 @app.route("/data")
 def print_data():
+    """
+    This return data
+    """
     return jsonify([key for key in users])
 
 
 @app.route("/status")
 def print_status():
+    """
+    This function return status
+    """
     return "OK"
 
 
 @app.route("/users/<username>")
 def print_profile(username):
+    """
+    This function return profile
+    """
     user = users.get(username)
     if user:
         ordered_user = [(key, user[key]) for key in user]
@@ -43,6 +55,9 @@ def print_profile(username):
 
 @app.route("/add_user", methods=['POST'])
 def add_user():
+    """
+    This function return user added
+    """
     data = request.get_json()
 
     if not data or "username" not in data:
