@@ -8,14 +8,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 
-users = {
-    "jane": {
-        "username": "Jane",
-        "name": "Jane",
-        "age": 28,
-        "city": "Los Angeles"}
-}
-
+users = {}
 
 @app.route('/')
 def home():
@@ -48,8 +41,8 @@ def print_profile(username):
     """
     user = users.get(username)
     if user:
-        ordered_user = [(key, user[key]) for key in user]
-        return jsonify(dict(ordered_user))
+        ordered_user = dict([(key, user[key]) for key in user])
+        return jsonify(ordered_user)
     return jsonify({"error": "User not found"})
 
 
