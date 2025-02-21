@@ -4,10 +4,7 @@ This module provide flask class
 """
 from flask import Flask, jsonify, request
 
-
 app = Flask(__name__)
-
-
 users = {}
 
 
@@ -40,10 +37,8 @@ def print_profile(username):
     """
     This function return profile
     """
-    user = users.get(username)
-    if user:
-        ordered_user = dict([(key, user[key]) for key in user])
-        return jsonify(ordered_user)
+    if username in users:
+        return jsonify(users[username])
     return jsonify({"error": "User not found"})
 
 
@@ -55,7 +50,7 @@ def add_user():
     data = request.get_json()
 
     if not data or "username" not in data:
-        return jsonify({"error": "Missing username"}), 400
+        return jsonify({"error": "Username is required"}), 400
 
     username = data["username"]
 
