@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 users = {}
 
+
 @app.route('/')
 def home():
     """
@@ -54,7 +55,7 @@ def add_user():
     data = request.get_json()
 
     if not data or "username" not in data:
-        return jsonify({"error": "Missing username"})
+        return jsonify({"error": "Missing username"}), 400
 
     username = data["username"]
 
@@ -66,6 +67,8 @@ def add_user():
         "name": data.get("name", ""),
         "age": data.get("age", 0),
         "city": data.get("city", "")}
+
+    return jsonify({"message": "User added", "user": data}), 201
 
 
 if __name__ == "__main__":
