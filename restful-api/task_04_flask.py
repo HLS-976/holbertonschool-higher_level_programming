@@ -39,7 +39,7 @@ def print_profile(username):
     """
     if username in users:
         return jsonify(users[username])
-    return jsonify({"error": "User not found"})
+    return jsonify({"error": "User not found"}), 404
 
 
 @app.route("/add_user", methods=['POST'])
@@ -53,9 +53,6 @@ def add_user():
         return jsonify({"error": "Username is required"}), 400
 
     username = data["username"]
-
-    if username in users:
-        return jsonify({"error": "User already exists"})
 
     users[username] = {
         "username": username,
