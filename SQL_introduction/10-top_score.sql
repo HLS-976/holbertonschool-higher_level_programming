@@ -1,0 +1,1 @@
+-- This script lists all records of a table
