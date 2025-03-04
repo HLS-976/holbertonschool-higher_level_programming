@@ -1,2 +1,2 @@
 -- That script that prints description of a table
-select name from first_table;
+show create table first_table;
