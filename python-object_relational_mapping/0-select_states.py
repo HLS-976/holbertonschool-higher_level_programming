@@ -15,12 +15,8 @@ if __name__ == '__main__':
         database=sys.argv[3]
         )
 
-    table = "states"
     cursor = db.cursor()
-    cursor.execute(
-        f"SELECT * FROM {table} \
-            ORDER BY {table}.id"
-    )
+    cursor.execute("SELECT * FROM states ORDER BY states.id")
     states = cursor.fetchall()
     for state in states:
         print(state)
