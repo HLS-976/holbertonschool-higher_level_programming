@@ -16,7 +16,7 @@ if __name__ == "__main__":
         database=sys.argv[3],
     )
 
-    table = "states"
+    table = 'states'
     name_to_search = sys.argv[4]
     cursor = db.cursor()
     cursor.execute(
