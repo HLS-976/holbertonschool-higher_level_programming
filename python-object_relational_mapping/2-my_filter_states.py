@@ -21,7 +21,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute(
         "SELECT * FROM {} WHERE \
-        name = '{}' ORDER BY id ASC".format(table, name_to_search)
+        name = '{}'".format(table, name_to_search)
     )
     result = cursor.fetchall()
     for row in result:
