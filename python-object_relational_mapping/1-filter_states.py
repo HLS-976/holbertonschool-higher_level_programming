@@ -8,6 +8,7 @@ import MySQLdb
 import sys
 
 if __name__ == '__main__':
+    """script listing"""
     db = MySQLdb.connect(
         host='localhost',
         port=3306,
