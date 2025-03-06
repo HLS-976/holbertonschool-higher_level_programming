@@ -16,10 +16,12 @@ if __name__ == "__main__":
         database=sys.argv[3],
     )
 
+    table = "states"
+    name_to_search = sys.argv[4]
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE \
-        name = '{}' ORDER BY id ASC".format(sys.argv[4])
+        "SELECT * FROM {} WHERE \
+        name = '{}' ORDER BY id ASC".format(table, name_to_search)
     )
     result = cursor.fetchall()
     for row in result:
