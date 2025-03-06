@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """
+This script takes an safety argument and retrieves
+the result that matchs by given argument
 """
 
 import MySQLdb
