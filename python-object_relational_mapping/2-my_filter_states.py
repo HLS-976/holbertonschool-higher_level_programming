@@ -13,7 +13,7 @@ if __name__ == "__main__":
         port=3306,
         user=sys.argv[1],
         password=sys.argv[2],
-        database=sys.argv[3],
+        database=sys.argv[3]
     )
 
     name_to_search = sys.argv[4]
