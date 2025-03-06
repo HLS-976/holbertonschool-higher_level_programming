@@ -16,9 +16,8 @@ if __name__ == "__main__":
         database=sys.argv[3],
     )
 
-    table = "states"
-    query = "SELECT * FROM {} WHERE \
-        name = %s ORDER BY id ASC".format(table)
+    query = "SELECT * FROM states WHERE \
+        name = %s ORDER BY id ASC"
     name_to_search = sys.argv[4]
     cursor = db.cursor()
     cursor.execute(query, (sys.argv[4],))
