@@ -8,12 +8,12 @@ if __name__ == '__main__':
     This create a connection
     """
     db = MySQLdb.connect(
-    host="localhost",
-    port=3306,
-    user=sys.argv[1],
-    password=sys.argv[2],
-    database=sys.argv[3]
-    )
+        host="localhost",
+        port=3306,
+        user=sys.argv[1],
+        password=sys.argv[2],
+        database=sys.argv[3]
+        )
 
     table = "states"
     cursor = db.cursor()
