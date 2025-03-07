@@ -19,7 +19,7 @@ if __name__ == "__main__":
     name_to_search = sys.argv[4]
     cursor = db.cursor()
     query = "SELECT * FROM states WHERE \
-        name = '{}' ORDER BY id ASC".format(name_to_search)
+        name = '{}' ORDER BY states.id ASC".format(name_to_search)
     cursor.execute(query)
 
     result = cursor.fetchall()
