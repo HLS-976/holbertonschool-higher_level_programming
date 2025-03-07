@@ -21,7 +21,6 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute(query, (state_name,))
     result = cursor.fetchall()
-    for row in result:
-        print(", ".join(row[0] for row in result))
+    print(", ".join(row[0] for row in result))
     cursor.close()
     db.close()
