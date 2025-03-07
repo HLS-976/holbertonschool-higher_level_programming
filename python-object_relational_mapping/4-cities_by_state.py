@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This script lists all cities from the database"""
+"""
+Lists all cities from the database.
+"""
 
 import MySQLdb
 import sys
@@ -13,7 +15,9 @@ if __name__ == "__main__":
         database=sys.argv[3]
     )
 
-    query = "SELECT * FROM cities ORDER BY id ASC"
+    query = "SELECT cities.id, cities.name, states.name FROM cities \
+        JOIN states ON states.id WHERE states.id = cities.state_id \
+            ORDER BY id ASC"
     cursor = db.cursor()
     cursor.execute(query)
     result = cursor.fetchall()
