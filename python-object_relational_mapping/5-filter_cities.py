@@ -16,7 +16,7 @@ if __name__ == "__main__":
     state_name = sys.argv[4]
     query = "SELECT cities.name FROM cities \
             JOIN states ON states.id = cities.state_id \
-            WHERE states.name = %s \
+            WHERE states.name LIKE BINARY %s \
             ORDER BY cities.id ASC"
     cursor = db.cursor()
     cursor.execute(query, (state_name,))
