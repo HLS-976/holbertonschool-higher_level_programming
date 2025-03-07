@@ -20,7 +20,7 @@ if __name__ == "__main__":
     cursor.execute(
         "SELECT cities.id, cities.name, states.name FROM cities \
         JOIN states ON states.id WHERE states.id = cities.state_id \
-            ORDER BY id ASC"
+            ORDER BY cities.id ASC"
     )
     result = cursor.fetchall()
     for row in result:
