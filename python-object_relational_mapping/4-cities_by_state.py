@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 Lists all cities from the database.
+With name of cities and their state
 """
 
 import MySQLdb
@@ -15,11 +16,12 @@ if __name__ == "__main__":
         database=sys.argv[3]
     )
 
-    query = "SELECT cities.id, cities.name, states.name FROM cities \
+    cursor = db.cursor()
+    cursor.execute(
+        "SELECT cities.id, cities.name, states.name FROM cities \
         JOIN states ON states.id WHERE states.id = cities.state_id \
             ORDER BY id ASC"
-    cursor = db.cursor()
-    cursor.execute(query)
+    )
     result = cursor.fetchall()
     for row in result:
         print(row)
