@@ -1,47 +1,24 @@
 #!/usr/bin/python3
 
-import os
+from flask import Flask, render_template
 
-def generate_invitations(template, attendees):
+app = Flask(__name__)
 
-    try: 
-        if not isinstance(template, str):
-            raise TypeError("Template must be a string")
-        
-        if not isinstance(attendees, list) or not all(isinstance(attendee, dict) for attendee in attendees):
-            raise TypeError("Attendees must be a list of dictionaries")
-        
-    except TypeError as e:
-        print(f'Error: {e}')
-        return
-    
-    try:
-        if not template.strip():
-            raise ValueError("Template is empty, no output files generated.")
-        
-        if not attendees:
-            raise ValueError("No data provided, no output files generated.")
-        
-    except ValueError as e:
-        print(f'Error: {e}')
-        return
-    
-    for i, attendee in enumerate(attendees, start=1):
-        output_content = template
-        for key in ["name", "event_title", "event_date", "event_location"]:
-            placeholder = "{" + key + "}"
-            value = attendee.get(key, "N/A")
-            if value is None:
-                value = "N/A"
-            output_content = output_content.replace(placeholder, value)
-        output_filename = f"output_{i}.txt"
 
-        if os.path.exists(output_filename):
-            print(
-                f"Warning: {output_filename}\
-                already exists. Skipping file creation."
-                  )
-            continue
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-        with open(output_filename, 'w') as output_file:
-            output_file.write(output_content)
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
